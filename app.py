@@ -1,8 +1,8 @@
 
 from flask import Flask,request,render_template,url_for
 from flask import jsonify
-from OpenSSL import SSL
-from waitress import serve
+#from OpenSSL import SSL
+#from waitress import serve
 #from facedetection import getimage
 #from werkzeug.utils import secure_filename
 #import os
@@ -20,8 +20,10 @@ app = Flask(__name__, static_url_path="", static_folder="static")
 
 def my_form():
     return render_template('index.html')
-
-
+    
+@app.route("/kangaroo", methods=["GET"])
+def new_form():
+    return render_template('new_index.html')
 #@app.route('/',methods=['POST'])
 # def look_up():
 #     # results = get_comments(videoid)
