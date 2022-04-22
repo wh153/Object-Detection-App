@@ -23,24 +23,39 @@
  * LinkedIn: https://www.linkedin.com/in/creativetech
  ********************************************************************/
 //import {loadGraphModel} from '@tensorflow/tfjs-converter';
+console.log('oay');
 import * as tf from '@tensorflow/tfjs';
 import "./styles.css";
-
+console.log('okay');
 const demosSection = document.getElementById('demos');
 var model = undefined;
-const newe = tf.loadGraphModel("https://raw.githubusercontent.com/hugozanini/TFJS-object-detection/master/models/kangaroo-detector/model.json");
+model_url = tf.loadGraphModel("https://raw.githubusercontent.com/hugozanini/TFJS-object-detection/master/models/kangaroo-detector/model.json");
 // Before we can use COCO-SSD class we must wait for it to finish
 // loading. Machine Learning models can be large and take a moment to
 // get everything needed to run.
 //async function load_model() {
   //model = loadedModel;
   // Show demo section now model is ready to use.
-model.then(function(loadedModel) {
-    model = newe;
-    // Show demo section now model is ready to use.
-    demosSection.classList.remove('invisible');
-});
+// model.then(function(loadedModel) {
+//     model = newe;
+//     // Show demo section now model is ready to use.
+//     demosSection.classList.remove('invisible');
+// });
 
+
+
+//Call load function
+asyncLoadModel(model_url);
+
+
+//Function Loads the GraphModel type model of
+async function asyncLoadModel(model_url) {
+    model = await tf.loadGraphModel(model_url);
+    console.log('Model loaded');
+    //Enable start button:
+    //enableWebcamButton.classList.remove('invisible');
+    //enableWebcamButton.innerHTML = 'Start camera';
+}
 //demosSection.classList.remove('invisible');
 //return model
 //};
