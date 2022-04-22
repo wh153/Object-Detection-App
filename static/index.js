@@ -22,31 +22,39 @@
  * Twitter: @jason_mayes
  * LinkedIn: https://www.linkedin.com/in/creativetech
  ********************************************************************/
-import {loadGraphModel} from '@tensorflow/tfjs-converter';
+//import {loadGraphModel} from '@tensorflow/tfjs-converter';
+import * as tf from '@tensorflow/tfjs';
+import "./styles.css";
+
 const demosSection = document.getElementById('demos');
 var model = undefined;
-
+const newe = tf.loadGraphModel("https://raw.githubusercontent.com/hugozanini/TFJS-object-detection/master/models/kangaroo-detector/model.json");
 // Before we can use COCO-SSD class we must wait for it to finish
 // loading. Machine Learning models can be large and take a moment to
 // get everything needed to run.
-async function load_model() {
+//async function load_model() {
   //model = loadedModel;
   // Show demo section now model is ready to use.
-  const model = await loadGraphModel("https://raw.githubusercontent.com/hugozanini/TFJS-object-detection/master/models/kangaroo-detector/model.json");
-  //demosSection.classList.remove('invisible');
-  return model
-};
+model.then(function(loadedModel) {
+    model = newe;
+    // Show demo section now model is ready to use.
+    demosSection.classList.remove('invisible');
+});
 
-let classesDir = {
-    1: {
-        name: 'Kangaroo',
-        id: 1,
-    },
-    2: {
-        name: 'Other',
-        id: 2,
-    }
-}
+//demosSection.classList.remove('invisible');
+//return model
+//};
+
+// let classesDir = {
+//     1: {
+//         name: 'Kangaroo',
+//         id: 1,
+//     },
+//     2: {
+//         name: 'Other',
+//         id: 2,
+//     }
+// }
 
 
 /********************************************************************
