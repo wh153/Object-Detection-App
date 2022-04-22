@@ -23,7 +23,7 @@ def my_form():
     
 @app.route("/kangaroo", methods=["GET"])
 def new_form():
-    return render_template('new_index.html')
+    return render_template('public/new_index.html')
 #@app.route('/',methods=['POST'])
 # def look_up():
 #     # results = get_comments(videoid)
