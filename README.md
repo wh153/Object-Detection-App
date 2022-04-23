@@ -18,9 +18,9 @@ if Docker is installed, the following commands can be run:
 docker build -t flask-object-detect-app:latest
 ```
 After the build completes, you can run the container:
-
+```properties
 docker run -d -p 5000:5000 object-detect
-
+```
 
 ## Part II : Kangaroo Detection Web app using Transfer Learning
 
