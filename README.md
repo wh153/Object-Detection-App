@@ -15,14 +15,14 @@ An image is built and stored in Amazon ECR. From there, the application is easil
 
 if Docker is installed, the following commands can be run:
 ```properties
-docker build -t flask-object-detect-app:latest
+docker build -t object-detect-app:latest
 ```
 After the build completes, you can run the container:
 ```properties
-docker run -d -p 5000:5000 object-detect
+docker run -d -p 5000:5000 object-detect-app
 ```
 
-## Part II : Kangaroo Detection Web app using Transfer Learning
+## Part II : Kangaroo Detection Web App using Transfer Learning
 
 What if we wanted to detect specific objects? Like Kangaroo...? In this case, we retrain/validate the model on all kangaroo images and save this new model. This time, the application can only detect kangaroo like pictures(webcam or pictures).
 
