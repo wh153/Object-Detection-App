@@ -14,7 +14,9 @@ An image is built and stored in Amazon ECR. From there, the application is easil
 **Installation locally**
 
 if Docker is installed, the following commands can be run:
+```properties
 docker build -t flask-object-detect-app:latest
+```
 After the build completes, you can run the container:
 
 docker run -d -p 5000:5000 object-detect
