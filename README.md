@@ -24,7 +24,9 @@ docker run -d -p 5000:5000 object-detect-app
 
 ## Part II : Kangaroo Detection Web App using Transfer Learning
 
-What if we wanted to detect specific objects? Like Kangaroo...? In this case, we retrain/validate the model on all kangaroo images and save this new model. This time, the application can only detect kangaroo like pictures(webcam or pictures).
+What if we wanted to detect specific objects? Like Kangaroo...? 
+
+In this case, we retrain/validate the model on all kangaroo images and save this new model. This time, the application can only detect kangaroo like pictures(webcam or pictures).
 
 The app is hosted on Glitch and can be accessed here(*add*). All you need to do is click on the preview button
 
